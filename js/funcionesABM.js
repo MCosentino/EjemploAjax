@@ -30,17 +30,36 @@ function EditarCD(idParametro)
 		}
 	});
 	funcionAjax.done(function(retorno){
-		Mostrar("MostrarFormAlta");
-		var cd =JSON.parse(retorno);	
-		$("#idCD").val(cd.id);
-		$("#cantante").val(cd.cantante);
-		$("#titulo").val(cd.titulo);
-		$("#anio").val(cd.año);
+					Mostrar("MostrarFormAlta");
+					
+					setTimeout(function(){
+
+					var cd =JSON.parse(retorno);			
+					$("#idCD").val(cd.id);
+					$("#cantante").val(cd.cantante);
+					$("#titulo").val(cd.titulo);
+					$("#anio").val(cd.año);
+				 	alert("llego");
+
+
+						 }, 3000);
+					
+		
+
+
 	});
 	funcionAjax.fail(function(retorno){	
 		$("#informe").html(retorno.responseText);	
+
+
+
+
+
 	});
-	sleep(6);	
+
+		
+	//sleep(6);	
+
 	
 
 }
