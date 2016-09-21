@@ -84,11 +84,11 @@ function Mostrar(queMostrar)
 		data: { queHacer:queMostrar }//los datos que voy a pasar para el otro lado.
 
 		})
-	.then(function(exito)
+	.then(function si(exito)
 	{
 		$("#principal").html(exito);
 	},
-	function(error)
+	function no(error)
 	{
 
 	});
@@ -100,7 +100,7 @@ function Mostrar(queMostrar)
 function MostarLogin()
 {
 		//alert(queMostrar);
-	var funcionAjax=$.ajax({
+/*	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
 		data:{queHacer:"MostarLogin"}
@@ -117,6 +117,18 @@ function MostarLogin()
 		//alert("siempre "+retorno.statusText);
 
 	});
-
-	//$.ajax({url :})
+*/
+	$.ajax({
+		url :"nexo.php",
+		type : "post",
+		data: {queHacer:"MostrarLogin"}
+		})
+	.then(function si(exito)
+	{	
+		$("#principal").html(exito);
+	},
+	function no(error)
+	{
+		alert("ERROR!");
+	});
 }
