@@ -38,8 +38,10 @@ function EditarCD(idParametro)
 	});
 	funcionAjax.fail(function(retorno){	
 		$("#informe").html(retorno.responseText);	
-	});	
+	});
+	sleep(6);	
 	Mostrar("MostrarFormAlta");
+
 }
 
 function GuardarCD()
